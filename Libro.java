@@ -14,16 +14,18 @@ public class Libro {
     private String titulo;
     private int numeroPaginas;
     private String numeroReferencia;
+    private int vecesPrestado;
 
     /**
      * Fija el autor y el titulo del libro a los dados como parametro
      */
-    public Libro(String autorLibro, String tituloLibro, int numeroDePaginas)
+    public Libro(String autorLibro, String tituloLibro, int numeroDePaginas, int vecesPrestadas)
     {
         autor = autorLibro;
         titulo = tituloLibro;
         numeroPaginas = numeroDePaginas;
         numeroReferencia = "";
+        vecesPrestado = vecesPrestadas;
     }
 
     public String getAutor(){
@@ -48,7 +50,7 @@ public class Libro {
 
     public void imprimirDetalles(){
         if(numeroReferencia.length()==0){
-            System.out.println("Autor: "+ autor + ", "+"Título: "+ titulo+", "+"Páginas: "+ numeroPaginas);
+            System.out.println("Autor: "+ autor + ", "+"Título: "+ titulo+", "+"Páginas: "+ numeroPaginas+", "+"Número de veces prestadas: "+vecesPrestado);
             System.out.println("Número de referencia: ZZZ"); 
         }
         else {
@@ -60,11 +62,11 @@ public class Libro {
     public String getDetalles(){
         String aDevolver = "";
         if(numeroReferencia.length() == 0){ 
-            aDevolver = "Autor del libro: " +autor+", "+"Título del libro: "+titulo+", "+"Número de páginas: "+numeroPaginas;
+            aDevolver = "Autor del libro: " +autor+", "+"Título del libro: "+titulo+", "+"Número de páginas: "+numeroPaginas+ ", "+"Número de veces prestadas: "+vecesPrestado;
             System.out.println("Número de referencia: ZZZ"); 
         }
         else{
-            aDevolver = "Autor del libro: " +autor+", "+"Título del libro: "+titulo+", "+"Número de páginas: "+numeroPaginas;
+            aDevolver = "Autor del libro: " +autor+", "+"Título del libro: "+titulo+", "+"Número de páginas: "+numeroPaginas+ ", "+"Número de veces prestadas: "+vecesPrestado;
             System.out.println("Número de referencia: "+ numeroReferencia);
         }
         return aDevolver;
@@ -81,5 +83,13 @@ public class Libro {
         else{
             numeroReferencia = nuevoNumeroReferencia;
         }
+    }
+    
+    public void prestar(){
+        vecesPrestado = vecesPrestado + 1;
+    }
+    
+    public int getVecesPrestado(){
+        return vecesPrestado;
     }
 }
