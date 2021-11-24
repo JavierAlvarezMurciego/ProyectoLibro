@@ -75,9 +75,11 @@ public class Libro {
     }
 
     public void setNumeroReferencia(String nuevoNumeroReferencia){
-        numeroReferencia = nuevoNumeroReferencia;
-        if(numeroReferencia.length() <= 3){
-            System.out.println("Error: Solo acepta un número de referencia que contenga al menos tres caracteres");
+        if (nuevoNumeroReferencia.length() < 3){
+            System.out.println("Error: No se aceptan valores menores de tres caracteres");
+        }
+        else{
+            numeroReferencia = nuevoNumeroReferencia;
         }
     }
 }
