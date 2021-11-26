@@ -51,46 +51,40 @@ public class Libro {
     }
 
     public void imprimirDetalles(){
-        String nosDevuelve ="";
-        if(numeroReferencia.length()==0){
-            if( esLibroDeTexto == true){
-                nosDevuelve = "Autor: "+ autor + ", "+"Título: "+ titulo+", "+"Páginas: "+ numeroPaginas+", "+"Número de veces prestadas: "+vecesPrestado+", "+"Libro de texto: Si"+", "+"Número de referencia: ZZZ";
-            }
-            else{
-                nosDevuelve = "Autor: "+ autor + ", "+"Título: "+ titulo+", "+"Páginas: "+ numeroPaginas+", "+"Número de veces prestadas: "+vecesPrestado+", "+"Libro de texto: No"+", "+"Número de referencia: ZZZ";
-            } 
+        String nosDevuelve = "";
+        nosDevuelve = "Autor del libro: " +autor+", "+"Título del libro: "+titulo+", "+"Número de páginas: "+numeroPaginas+ ", "+"Número de veces prestadas: "+vecesPrestado;
+        if(esLibroDeTexto == true){
+            nosDevuelve= nosDevuelve + ", "+"Libro de texto: Si";
         }
-        else {
-            if( esLibroDeTexto == true){
-                nosDevuelve = "Autor: "+ autor + ", "+"Título: "+ titulo+", "+"Páginas: "+ numeroPaginas+", "+"Número de veces prestadas: "+vecesPrestado+", "+"Libro de texto: Si"+", "+"Número de referencia: "+ numeroReferencia;
-            }
-            else{
-                nosDevuelve = "Autor: "+ autor + ", "+"Título: "+ titulo+", "+"Páginas: "+ numeroPaginas+", "+"Número de veces prestadas: "+vecesPrestado+", "+"Libro de texto: No"+", "+"Número de referencia: "+ numeroReferencia;
-            } 
+        else{
+            nosDevuelve= nosDevuelve + ", "+"Libro de texto: No";
+        }
+        if(esLibroDeTexto == true){
+            nosDevuelve= nosDevuelve+ ", "+"Número de referencia: ZZZ";
+        }
+        else{
+            nosDevuelve= nosDevuelve +", "+ "Número de referencia: ZZZ";
         }
         System.out.println(nosDevuelve);
     }
 
     public String getDetalles(){
         String aDevolver = "";
-        if(numeroReferencia.length() == 0){
-            if(esLibroDeTexto == true){
-                aDevolver = "Autor del libro: " +autor+", "+"Título del libro: "+titulo+", "+"Número de páginas: "+numeroPaginas+ ", "+"Número de veces prestadas: "+vecesPrestado+", "+"Libro de texto: Si"+", "+"Número de referencia: ZZZ";
-            }
-            else{
-                aDevolver = "Autor del libro: " +autor+", "+"Título del libro: "+titulo+", "+"Número de páginas: "+numeroPaginas+ ", "+"Número de veces prestadas: "+vecesPrestado+", "+"Libro de texto: No"+", "+"Número de referencia: ZZZ";
-            }
+        aDevolver = "Autor del libro: " +autor+", "+"Título del libro: "+titulo+", "+"Número de páginas: "+numeroPaginas+ ", "+"Número de veces prestadas: "+vecesPrestado;
+        if(esLibroDeTexto == true){
+            aDevolver= aDevolver + ", "+"Libro de texto: Si";
         }
         else{
-            if(esLibroDeTexto == true){
-                aDevolver = "Autor del libro: " +autor+", "+"Título del libro: "+titulo+", "+"Número de páginas: "+numeroPaginas+ ", "+"Número de veces prestadas: "+vecesPrestado+", "+"Libro de texto: Si"+","+"Número de referencia: "+ numeroReferencia;
-            }
-            else{   
-                aDevolver = "Autor del libro: " +autor+", "+"Título del libro: "+titulo+", "+"Número de páginas: "+numeroPaginas+ ", "+"Número de veces prestadas: "+vecesPrestado+", "+"Libro de texto: No"+","+"Número de referencia: "+ numeroReferencia;
-                
-            }
+            aDevolver= aDevolver + ", "+"Libro de texto: No";
+
         }
-        System.out.println(aDevolver);
+        if(esLibroDeTexto == true){
+            aDevolver= aDevolver + ", "+"Número de referencia: ZZZ";
+        }
+        else{
+            aDevolver= aDevolver +", "+ "Número de referencia: ZZZ";
+
+        }
         return aDevolver;
     }
 
